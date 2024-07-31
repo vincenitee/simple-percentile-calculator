@@ -2,6 +2,7 @@
 const selectById = (id) => document.getElementById(id);
 
 // Select relevant elements
+const firstInput = selectById('a1');
 const calculateBtn = selectById('calculate');
 const clearBtn = selectById('clear');
 const inputs = document.querySelectorAll('input[type="number"]');
@@ -104,4 +105,7 @@ function clearInputs() {
     inputs.forEach((input) => {
         input.value = '';
     });
+
+    // Scrolls back into the first input
+    firstInput.scrollIntoView({behavior: 'smooth', block: 'center'})
 }
